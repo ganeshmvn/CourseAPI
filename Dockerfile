@@ -1,6 +1,8 @@
 FROM maven:3.5.2-jdk-8-alpine AS MAVEN_BUILD
 MAINTAINER Ganesh MVN
 WORKDIR /build/
+ADD /build/
+ADD /build/src/
 COPY pom.xml /build/
 COPY src /build/src/
 RUN mvn package
